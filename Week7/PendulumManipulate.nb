@@ -1,0 +1,141 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4221,        131]
+NotebookOptionsPosition[      3831,        114]
+NotebookOutlinePosition[      4283,        132]
+CellTagsIndexPosition[      4240,        129]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"g", " ", "=", " ", "9.8"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"l", " ", "=", " ", "0.5"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"oemga", " ", "=", " ", 
+    SqrtBox[
+     RowBox[{"(", 
+      RowBox[{"g", "/", "l"}], ")"}]]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Theta]0", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"20", " ", "\[Times]", " ", "\[Pi]"}], ")"}], " ", "/", " ", 
+    "180"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Omega]0", " ", "=", " ", "0"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ode1", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Theta]", "''"}], "[", "t", "]"}], " ", "=", " ", 
+     RowBox[{"-", " ", 
+      RowBox[{"(", 
+       RowBox[{"g", "/", "l"}], ")"}]}]}], "}"}], 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], "\[IndentingNewLine]", "sol"}], 
+      " ", "=", " ", 
+      RowBox[{"MDSolve", "[", 
+       RowBox[{"ode1", ",", " ", "\[Theta]", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", " ", "\[Theta]", ",", " ", "20"}], "}"}]}], 
+       "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"aprox", " ", "=", " ", 
+      RowBox[{"(", 
+       RowBox[{"180", " ", "/", " ", "Pi"}], ")"}], " "}]}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.577560054569662*^9, 3.577560154511793*^9}, {
+  3.5775601884782677`*^9, 3.5775602114453287`*^9}, {3.5775602546844254`*^9, 
+  3.5775602735803022`*^9}, {3.577560307401017*^9, 3.5775604619323*^9}, {
+  3.577560541630344*^9, 3.577560545512175*^9}, {3.5775607653591347`*^9, 
+  3.577560779391609*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"myplot", " ", "=", " ", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"[", 
+       RowBox[{"approx", ",", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"180", "/", "Pi"}], ")"}], " ", 
+         RowBox[{
+          RowBox[{"\[Theta]", "[", "t", "]"}], " ", "/", " ", "sol"}]}]}], 
+       "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", " ", "\[Theta]", ",", " ", "20"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotStyle", " ", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "Blue", "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"Dashed", ",", " ", "Red"}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"AxesLabel", " ", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{"\"\<t (s)\>\"", ",", " ", "\"\<\[Theta] (rad)\>\""}], 
+        "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"[", 
+          RowBox[{"0", ",", " ", "10"}], "]"}], ",", " ", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"-", "20"}], ",", " ", "20"}], "]"}]}], "}"}]}], ",", " ", 
+      
+      RowBox[{"ImageSize", " ", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{"500", ",", " ", "300"}], "}"}]}]}]}]}], "}"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.577560492469077*^9, 3.577560736489427*^9}}]
+},
+WindowSize->{849, 526},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.25, 1.25 Inherited],
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 22, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1803, 49, 258, "Input"],
+Cell[2363, 71, 1464, 41, 91, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
